@@ -28,6 +28,12 @@ jobs:
           echo "Morning"
 
       - name: Github Actions 자체에 저장되어 있는 변수 사용해보기
+        # $GITHUB_SHA: 현재 커밋의 SHA 값
         run: |
-          echo $GITHUB_SHA
+          echo $GITHUB_SHA 
           echo $GITHUB_REPOSITORY
+
+      - name: 아무한테 노출이 되면 안 되는 값
+        run: | 
+          echo ${{ secrets.MY_NAME}}
+          echo ${{ secrets.MY_HOBBY }}
